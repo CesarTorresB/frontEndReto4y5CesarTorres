@@ -1,0 +1,851 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: Rockness;
+    src: url(fonts/Rockness.ttf);
+}
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: fuente1;
+    src: url(fonts/fuente1.ttf);
+}
+
+@font-face {
+    font-family: StatesvilleDemoRegular;
+    src: url(fonts/StatesvilleDemoRegular.ttf);
+}
+
+@font-face {
+    font-family: ChampagneyLimousines;
+    src: url(fonts/ChampagneyLimousines.ttf);
+}
+
+.ContenedorSuperior {
+    display: block;
+    padding-bottom: 120px;
+}
+
+.contenedor1 {
+    background: #FFFFFF;
+    width: 600px;
+    height: 110px;
+    margin: 2em auto;
+    border: 6px solid #2B2A05;
+    border-radius: 2em;
+    display: block;
+    top: 60px;
+    justify-content: center;
+}
+
+.titulo1 {
+    font-family: Rockness;
+    font-size: 6em;
+    text-align: center;
+    position: relative;
+    position: absolute;
+    top: 25px;
+    left: 380px;
+    color: #2B2A05;
+}
+
+.titulo2 {
+    font-family: BebasNeue;
+    font-size: 2.8em;
+    position: relative;
+    position: absolute;
+    top: 160px;
+    left: 670px;
+}
+
+.iconoCabania img {
+    width: 200px;
+    position: relative;
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+
+.contenedor1img img {
+    width: 350px;
+    top: 120px;
+    left: 320px;
+    display: block;
+    margin: auto;
+    position: relative;
+    position: absolute;
+}
+
+.vegetacion1png img {
+    width: 330px;
+    position: relative;
+    position: absolute;
+    left: 960px;
+    top: -6px;
+}
+
+.contenedor2 {
+    left: 200px;
+    display: block;
+    position: relative;
+    position: absolute;
+    top: 240px;
+}
+
+.contenedor2 h2 {
+    font-family: fuente1;
+    font-size: 5em;
+}
+
+.contenedorMedio {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.contenedorSuperiorServicios1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.cardCategoria {
+    border-radius: 10px;
+    min-height: 460px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/madera1.jpg);
+}
+
+.CategoriaTitulo {
+    font-family: BebasNeue;
+    font-size: 4em;
+    text-align: center;
+}
+
+.inputNameCatg {
+    top: 130px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #032f1a;
+}
+
+.inputDescriptionCatg {
+    top: 170px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #023e21;
+}
+
+.btnRegistrarCategoria {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 360px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #583d0f;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnRegistrarCategoria:hover {
+    background-color: #bfbf72;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnConsultaCategoria {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 400px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #3c2a0a;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnConsultaCategoria:hover {
+    background-color: #a6a65a;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnGuardarCategoria {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 440px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #2a1d08;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnGuardarCategoria:hover {
+    background-color: #878740;
+    color: #000000;
+    transition: color 1s;
+}
+
+.cardCabanias {
+    border-radius: 10px;
+    min-height: 200px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/madera3.jpg);
+}
+
+.CategoriaCabanias {
+    font-family: BebasNeue;
+    font-size: 4em;
+    color: #061b06;
+    background: linear-gradient(rgba(167, 205, 191, 0.1), rgba(6, 88, 58, 0.4));
+    border-radius: 0.3em;
+    text-align: center;
+}
+
+.inputNameCabania {
+    top: 130px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #032f1a;
+}
+
+.inputBrandCabania {
+    top: 170px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #023e21;
+}
+
+.inputRoomsCabania {
+    top: 210px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #03512b;
+}
+
+.inputDescriptionCabania {
+    top: 250px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #076739;
+}
+
+.selectSelectCategory {
+    top: 290px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #bbc3bf;
+}
+
+.btnRegistrarCabania {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 360px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #583d0f;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnRegistrarCabania:hover {
+    background-color: #bfbf72;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnConsultaCabania {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 400px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #3c2a0a;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnConsultaCabania:hover {
+    background-color: #a6a65a;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnActualizarCabania {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 440px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #2a1d08;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnActualizarCabania:hover {
+    background-color: #878740;
+    color: #000000;
+    transition: color 1s;
+}
+
+.cardClientes {
+    border-radius: 10px;
+    min-height: 200px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/madera2.jpg);
+}
+
+.CategoriaClientes {
+    font-family: BebasNeue;
+    font-size: 4em;
+    color: #032313;
+    text-align: center;
+}
+
+.inputEmailClientes {
+    top: 130px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #032f1a;
+}
+
+.inputPasswordClientes {
+    top: 170px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #023e21;
+}
+
+.inputNameClientes {
+    top: 210px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #03512b;
+}
+
+.inputAgeClientes {
+    top: 250px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #076739;
+}
+
+.btnRegistrarClientes {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 360px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #583d0f;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnRegistrarClientes:hover {
+    background-color: #bfbf72;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnConsultarClientes {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 400px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #3c2a0a;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnConsultarClientes:hover {
+    background-color: #a6a65a;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnGuardarClientes {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 440px;
+    left: 30px;
+    height: 30px;
+    width: 214px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background-color: #2a1d08;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnGuardarClientes:hover {
+    background-color: #878740;
+    color: #000000;
+    transition: color 1s;
+}
+
+.contenedorBajo {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.contenedorBajoServicios2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.cardMensajes {
+    border-radius: 10px;
+    min-height: 460px;
+    font-weight: bold;
+    padding: 70px 40px 10px 30px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/madera4.jpg);
+}
+
+.tituloMensajes {
+    font-family: BebasNeue;
+    font-size: 4em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.inputMensaje {
+    top: 160px;
+    left: 30px;
+    height: 30px;
+    width: 470px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+
+.subTitulo1SelectMensaje {
+    font-family: BebasNeue;
+    font-size: 1.76em;
+    top: 230px;
+    width: 210px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(5, 7, 12, 0.70), rgba(5, 7, 12, 0.70));
+    position: relative;
+}
+
+.selectCabin {
+    top: 410px;
+    left: 30px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #bbc3bf;
+}
+
+.subTitulo2SelectMensaje {
+    font-family: BebasNeue;
+    font-size: 1.76em;
+    top: 196px;
+    left: 260px;
+    width: 210px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(5, 7, 12, 0.70), rgba(5, 7, 12, 0.70));
+    position: relative;
+}
+
+.selectClient {
+    top: 410px;
+    left: 290px;
+    height: 30px;
+    width: 210px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #bbc3bf;
+}
+
+.btnRegistrarMensaje {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 30px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(75, 106, 120, 40), rgba(8, 68, 93, 0.7));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnRegistrarMensaje:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnConsultarMensaje {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 196px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(75, 106, 120, 0.7), rgba(8, 68, 93, 0.7));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnConsultarMensaje:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnGuardarMensaje {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 360px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(75, 106, 120, 0.7), rgba(8, 68, 93, 0.7));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnGuardarMensaje:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.cardReservaciones {
+    border-radius: 10px;
+    min-height: 460px;
+    font-weight: bold;
+    padding: 70px 40px 10px 30px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/img/madera5.jpg);
+}
+
+.tituloResrvaciones {
+    font-family: BebasNeue;
+    font-size: 4em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.inptFechaInicio {
+    top: 160px;
+    left: 30px;
+    height: 30px;
+    width: 200px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+
+.inptFechaFinalizacion {
+    top: 160px;
+    left: 270px;
+    height: 30px;
+    width: 200px;
+    font-size: 1em;
+    position: relative;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+
+.subTitulo1SelectReservaciones {
+    font-family: BebasNeue;
+    font-size: 1.76em;
+    top: 230px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(5, 7, 12, 0.70), rgba(5, 7, 12, 0.70));
+    width: 210px;
+    position: relative;
+}
+
+.subTitulo2SelectReservaciones {
+    font-family: BebasNeue;
+    font-size: 1.76em;
+    top: 196px;
+    left: 260px;
+    color: #FFFFFF;
+    background: linear-gradient(rgba(5, 7, 12, 0.70), rgba(5, 7, 12, 0.70));
+    width: 210px;
+    position: relative;
+}
+
+.btnRegistrarReservacion {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 30px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(214, 216, 222, 0.7), rgba(5, 7, 12, 0.70));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnRegistrarReservacion:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnConsultarReservacion {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 196px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(214, 216, 222, 0.7), rgba(5, 7, 12, 0.70));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnConsultarReservacion:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.btnGuardarReservacion {
+    font-family: ChampagneyLimousines;
+    font-size: 1.4em;
+    top: 460px;
+    left: 360px;
+    height: 30px;
+    width: 140px;
+    position: relative;
+    position: absolute;
+    border-radius: .7em;
+    border: none;
+    background: linear-gradient(rgba(214, 216, 222, 0.7), rgba(5, 7, 12, 0.70));
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 1.2s;
+}
+
+.btnGuardarReservacion:hover {
+    background-color: #9f980d;
+    color: #000000;
+    transition: color 1s;
+}
+
+.ContenedorFooter {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+    background: linear-gradient(rgba(247, 214, 197, 0.7), rgba(37, 15, 2, 0.7));
+}
+
+.distribucionFooter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.informacionFooter {
+    font-family: ChampagneyLimousines;
+    font-size: 1.2em;
+    padding: 10px 0px 10px 60px;
+}
+
+.iconoFaceBook {
+    height: 60px;
+    width: 60px;
+    left: auto;
+    padding: 10px;
+    position: relative;
+    position: absolute;
+    background-size: cover;
+    background-image: url(/img/facebook.png);
+}
+
+.iconoInstagram {
+    height: 70px;
+    width: 70px;
+    left: 570px;
+    padding: 10px;
+    position: relative;
+    position: absolute;
+    background-size: cover;
+    background-image: url(/img/Instagram.png);
+}
+
+.iconoTwitter {
+    height: 50px;
+    width: 66px;
+    left: 230px;
+    padding: 10px;
+    position: relative;
+    background-size: cover;
+    background-image: url(/img/twitterpng.gif);
+}
+
+.iconoPayU {
+    height: 170px;
+    bottom: 60px;
+    padding: 3px;
+    position: relative;
+    background-size: cover;
+    background-image: url(/img/payU.png);
+}
