@@ -1,18 +1,50 @@
-function borrar(numId) {
+function borrarCategoria(numIdCategoria) {
 
-    var datosTabCabin = {
-        id: numId
+    var datosTabCategoria = {
+        id: numIdCategoria
     }
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCabin);
+    let dataToSendCategoria = JSON.stringify(datosTabCategoria);
 
     //Petición Ajax
 
     $.ajax({
 
-        url: "https://129.146.17.50:8080/Cabin/delete",
-        data: dataToSend,
+        url: "https://129.146.17.50:8080/api/Category/delete",
+        data: dataToSendCategoria,
+        type: 'DELETE',
+        contentType: "application/JSON",
+        success: function(respuesta) {
+            console.log("BORRADO");
+            consulta();
+        },
+
+        error: function(xhr, status) {
+            console.log(status);
+        }
+
+    })
+
+}
+
+//---------------------Borrar Cabañas--------------------
+
+function borrarCabin(numIdCabin) {
+
+    var datosTabCabin = {
+        id: numIdCabin
+    }
+
+    //Conversion a JSON
+    let dataToSendCabin = JSON.stringify(datosTabCabin);
+
+    //Petición Ajax
+
+    $.ajax({
+
+        url: "https://129.146.17.50:8080/api/Cabin/delete",
+        data: dataToSendCabin,
         type: 'DELETE',
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -30,18 +62,18 @@ function borrar(numId) {
 
 //---------------------Borrar Clientes--------------------
 
-function borrarCli(numIdc) {
-    var datosTabcli = {
-        id: numIdc
+function borrarClientes(numIdClientes) {
+    var datosTabClientes = {
+        id: numIdClientes
     }
 
     //Conversion a JSON
-    let dataToSendc = JSON.stringify(datosTabcli);
+    let dataToSendClientes = JSON.stringify(datosTabClientes);
 
     //Petición Ajax
     $.ajax({
-        url: "https://129.146.17.50:8080/Client/delete",
-        data: dataToSendc,
+        url: "https://129.146.17.50:8080/api/Client/delete",
+        data: dataToSendClientes,
         type: "DELETE",
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -58,18 +90,18 @@ function borrarCli(numIdc) {
 
 //---------------------- Borrar Mensajes--------------------
 
-function borrarMess(numIdM) {
-    var datosTabMess = {
-        id: numIdM
+function borrarMensajes(numIdMensajes) {
+    var datosTabMensajes = {
+        id: numIdMensajes
     }
 
     //Conversion a JSON
-    let dataToSendM = JSON.stringify(datosTabMess);
+    let dataToSendMensajes = JSON.stringify(datosTabMensajes);
 
     //Petición Ajax
     $.ajax({
-        url: "https://129.146.17.50:8080/Message/delete",
-        data: dataToSendM,
+        url: "https://129.146.17.50:8080/api/Message/delete",
+        data: dataToSendMensajes,
         type: "DELETE",
         contentType: "application/JSON",
         success: function(respuesta) {

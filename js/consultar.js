@@ -1,6 +1,6 @@
 //------------------- Consulta Categoria -------------------
 
-function consultaCatg() {
+function consultaCategoria() {
     console.log("se esta ejecutando");
     $.ajax({
         url: "http://129.146.17.50:8080/api/Category/all",
@@ -8,19 +8,19 @@ function consultaCatg() {
         datatype: "JSON",
         success: function(respuesta) {
             console.log(respuesta);
-            consultaRespuestaCatg(respuesta);
+            consultaRespuestaCategoria(respuesta);
             let $select = $("#selectCategory");
-            $.each(respuesta, function(id, name) {
+            $.each(respuesta, function(idCategory, name) {
                 $select.append(
-                    "<option value=" + name.id + ">" + name.name + "</option>"
+                    "<option value=" + name.idCategory + ">" + name.name + "</option>"
                 );
-                console.log("select " + name.id);
+                console.log("select " + name.idCategory);
             });
         },
     });
 }
 
-function consultaRespuestaCatg(respuesta) {
+function consultaRespuestaCategoria(respuesta) {
     var tabla = `<table border="1">
                 <tr>
                     <th>Id</th>
@@ -31,21 +31,21 @@ function consultaRespuestaCatg(respuesta) {
 
     for (i = 0; i < respuesta.length; i++) {
         tabla += `<tr>
-                    <td>${respuesta[i].id} </td>
+                    <td>${respuesta[i].idCategory} </td>
                     <td>${respuesta[i].name} </td>                 
                     <td>${respuesta[i].description} </td>                                   
-                    <td><button onclick="editarRegistro(${respuesta[i].id})">Editar</button> </td>
-                    <td><button onclick="borrar(${respuesta[i].id})">Borrar</button> </td>
+                    <td><button onclick="editarRegistroCategoria(${respuesta[i].idCategory})">Editar</button> </td>
+                    <td><button onclick="borrarCategoria(${respuesta[i].idCategory})">Borrar</button> </td>
                 </tr>`;
     }
 
     tabla += `</table>`;
-    $("#listadoCatg").html(tabla);
+    $("#listadoCategoria").html(tabla);
 }
 
 //----------------------- Consulta Cabañas --------------------------
 
-function consulta() {
+function consultaCabin() {
     console.log("se esta ejecutando");
     $.ajax({
         url: "http://129.146.17.50:8080/api/Cabin/all",
@@ -53,20 +53,20 @@ function consulta() {
         datatype: "JSON",
         success: function(respuesta) {
             console.log(respuesta);
-            consultaRespuesta(respuesta);
+            consultaRespuestaCabin(respuesta);
             let $select = $(".selectSelectCategory");
-            $.each(respuesta, function(id, name) {
+            $.each(respuesta, function(idCabin, name) {
                 $select.append(
-                    "<option value=" + name.id + ">" + name.name + "</option>"
+                    "<option value=" + name.idCabin + ">" + name.name + "</option>"
                 );
-                console.log("select " + name.id);
+                console.log("select " + name.idCabin);
             });
         },
     });
 }
 
 
-function consultaRespuesta(respuesta) {
+function consultaRespuestaCabin(respuesta) {
     var tabla = `<table border="1">
                 <tr>
                     <th>Id</th>
@@ -80,24 +80,24 @@ function consultaRespuesta(respuesta) {
 
     for (i = 0; i < respuesta.length; i++) {
         tabla += `<tr>
-                    <td>${respuesta[i].id} </td>
+                    <td>${respuesta[i].idCabin} </td>
                     <td>${respuesta[i].name} </td>
                     <td>${respuesta[i].brand} </td>
                     <td>${respuesta[i].rooms} </td>
                     <td>${respuesta[i].description} </td>  
                     <td>${respuesta[i].category.name} </td>                   
-                    <td><button onclick="editarRegistro(${respuesta[i].id})">Editar</button> </td>
-                    <td><button onclick="borrar(${respuesta[i].id})">Borrar</button> </td>
+                    <td><button onclick="editarRegistroCabin(${respuesta[i].idCabin})">Editar</button> </td>
+                    <td><button onclick="borrarCabin(${respuesta[i].idCabin})">Borrar</button> </td>
                 </tr>`;
     }
 
     tabla += `</table>`;
-    $("#listado").html(tabla);
+    $("#listadoCabin").html(tabla);
 }
 
 //-------------------- Consulta Clientes -------------------------
 
-function consultaCli() {
+function consultaClientes() {
     console.log("se esta ejecutando");
     $.ajax({
         url: "http://129.146.17.50:8080/api/Client/all",
@@ -105,19 +105,19 @@ function consultaCli() {
         datatype: "JSON",
         success: function(respuesta) {
             console.log(respuesta);
-            consultaRespuestaCli(respuesta);
+            consultaRespuestaClientes(respuesta);
             let $select = $(".selectClient");
-            $.each(respuesta, function(id, name) {
+            $.each(respuesta, function(idClient, name) {
                 $select.append(
                     "<option value=" + name.idClient + ">" + name.name + "</option>"
                 );
-                console.log("select " + name.id);
+                console.log("select " + name.idClient);
             });
         },
     });
 }
 
-function consultaRespuestaCli(respuesta) {
+function consultaRespuestaClientes(respuesta) {
     var tabla = `<table border="1">
                   <tr>
                       <th>Id</th>                     
@@ -135,19 +135,19 @@ function consultaRespuestaCli(respuesta) {
                       <td>${respuesta[i].password} </td>
                       <td>${respuesta[i].name} </td>                      
                       <td>${respuesta[i].age} </td>  
-                      <td><button onclick="editarRegistroCli(${respuesta[i].id})">Editar</button> </td>
-                      <td><button onclick="borrarCli(${respuesta[i].id})">Borrar</button> </td>
+                      <td><button onclick="editarRegistroClientes(${respuesta[i].idClient})">Editar</button> </td>
+                      <td><button onclick="borrarClientes(${respuesta[i].idClient})">Borrar</button> </td>
                   </tr>`;
     }
 
     tabla += `</table>`;
 
-    $("#listadocli").html(tabla);
+    $("#listadoClientes").html(tabla);
 }
 
 //----------------- Consulta Mensajes ---------------------
 
-function consultaMess() {
+function consultaMensajes() {
     $.ajax({
         url: "http://129.146.17.50:8080/api/Message/all",
         type: "GET",
@@ -155,19 +155,19 @@ function consultaMess() {
 
         success: function(respuesta) {
             console.log(respuesta);
-            consultaRespuestaMess(respuesta);
+            consultaRespuestaMensajes(respuesta);
             let $select = $("#selectMessage");
-            $.each(respuesta, function(id, name) {
+            $.each(respuesta, function(idMessage, name) {
                 $select.append(
                     "<option value=" + name.idMessage + ">" + name.name + "</option>"
                 );
-                console.log("select " + name.id);
+                console.log("select " + name.idMessage);
             });
         },
     });
 }
 
-function consultaRespuestaMess(respuesta) {
+function consultaRespuestaMensajes(respuesta) {
     var tabla = `<table border="1">
                   <tr>
                       <th>Id</th>
@@ -183,19 +183,19 @@ function consultaRespuestaMess(respuesta) {
                       <td>${respuesta[i].messageText} </td>
                       <td>${respuesta[i].cabin.name} </td>  
                       <td>${respuesta[i].client.name} </td>   
-                      <td><button onclick="editarMess(${respuesta[i].id})">Editar</button> </td>
-                      <td><button onclick="borrarMess(${respuesta[i].id})">Borrar</button> </td>
+                      <td><button onclick="editarMensajes(${respuesta[i].idMessage})">Editar</button> </td>
+                      <td><button onclick="borrarMensajes(${respuesta[i].idMessage})">Borrar</button> </td>
                   </tr>`;
     }
 
     tabla += `</table>`;
 
-    $("#listadoM").html(tabla);
+    $("#listadoMensajes").html(tabla);
 }
 
 //----------- consulta reservaciones -----------------
 
-function consultaRes() {
+function consultaResrvaciones() {
     $.ajax({
         url: "http://129.146.17.50:8080/api/Reservation/all",
         type: "GET",
@@ -203,19 +203,19 @@ function consultaRes() {
 
         success: function(respuesta) {
             console.log(respuesta);
-            consultaRespuestaRes(respuesta);
+            consultaRespuestaReservaciones(respuesta);
             let $select = $("#selectReservation");
-            $.each(respuesta, function(id, name) {
+            $.each(respuesta, function(idReservation, name) {
                 $select.append(
                     "<option value=" + name.idReservation + ">" + name.name + "</option>"
                 );
-                console.log("select " + name.id);
+                console.log("select " + name.idReservation);
             });
         },
     });
 }
 
-function consultaRespuestaRes(respuesta) {
+function consultaRespuestaReservaciones(respuesta) {
     var tabla = `<table border="1">
                   <tr>
                       <th>Id</th>
@@ -234,12 +234,12 @@ function consultaRespuestaRes(respuesta) {
                       <td>${respuesta[i].cabin.name} </td> 
                       <td>${respuesta[i].client.name} </td>  
                                              
-                      <td><button onclick="editarMess(${respuesta[i].id})">Editar</button> </td>
-                      <td><button onclick="borrarMess(${respuesta[i].id})">Borrar</button> </td>
+                      <td><button onclick="editarReservaciones(${respuesta[i].idReservation})">Editar</button> </td>
+                      <td><button onclick="borrarReservaciones(${respuesta[i].idReservation})">Borrar</button> </td>
                   </tr>`;
     }
 
     tabla += `</table>`;
 
-    $("#listadoRes").html(tabla);
+    $("#listadoReservaciones").html(tabla);
 }

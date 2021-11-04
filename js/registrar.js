@@ -1,18 +1,18 @@
 //----------- registro Categorias-------------------
 
-function registroCatg() {
+function registroCategoria() {
     var datosTabCategory = {
-        name: $("#nameCatg").val(),
-        description: $("#descriptionCatg").val(),
+        name: $("#nameCategoria").val(),
+        description: $("#descriptionCategoria").val(),
     };
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCategory);
+    let dataToSendCategoria = JSON.stringify(datosTabCategoria);
 
     //Petición Ajax
     $.ajax({
         url: "http://129.146.17.50:8080/api/Category/save",
-        data: dataToSend,
+        data: dataToSendCategoria,
         type: "POST",
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -37,12 +37,12 @@ function registro() {
     };
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCabin);
+    let dataToSendCabin = JSON.stringify(datosTabCabin);
 
     //Petición Ajax
     $.ajax({
         url: "http://129.146.17.50:8080/api/Audience/save",
-        data: dataToSend,
+        data: dataToSendCabin,
         type: "POST",
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -57,21 +57,21 @@ function registro() {
 
 //-------------------- registro Cliente -------------------
 
-function registroCli() {
+function registroClientes() {
     var datosTabcli = {
-        email: $("#emailCli").val(),
-        password: $("#passwordCli").val(),
-        name: $("#nameCli").val(),
-        age: $("#ageCli").val(),
+        email: $("#emailClientes").val(),
+        password: $("#passwordClientes").val(),
+        name: $("#nameClients").val(),
+        age: $("#ageClientes").val(),
     };
 
     //Conversion a JSON
-    let dataToSendc = JSON.stringify(datosTabcli);
+    let dataToSendClientes = JSON.stringify(datosTabClientes);
 
     //Petición Ajax
     $.ajax({
         url: "http://129.146.17.50:8080/api/Client/save",
-        data: dataToSendc,
+        data: dataToSendClientes,
         type: "POST",
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -87,21 +87,21 @@ function registroCli() {
 
 //--------------------funcion Registro message-------------------
 
-function registroMess() {
-    var datosTabMess = {
+function registroMensajes() {
+    var datosTabMensajes = {
         messageText: $("#message").val(),
         cabin: { id: +$(".selectCabin").val() },
         client: { idClient: +$(".selectClient").val() },
     };
 
     //Conversion a JSON
-    var dataToSendM = JSON.stringify(datosTabMess);
+    var dataToSendMensajes = JSON.stringify(datosTabMensajes);
 
     //Petición Ajax
 
     $.ajax({
         url: "http://129.146.17.50:8080/api/Message/save",
-        data: dataToSendM,
+        data: dataToSendMensajes,
         type: "POST",
         contentType: "application/JSON",
         success: function(respuesta) {
@@ -117,8 +117,8 @@ function registroMess() {
 
 //--------------- funcion Registro Respositorio ----------------
 
-function registroRes() {
-    var datosTabRes = {
+function registroReservaciones() {
+    var datosTabReservaciones = {
         startDate: $("#startDate").val(),
         devolutionDate: $("#devolutionDate").val(),
         cabin: { id: +$(".selectCabin").val() },
@@ -126,13 +126,13 @@ function registroRes() {
     };
 
     //Conversion a JSON
-    var dataToSendR = JSON.stringify(datosTabRes);
+    var dataToSendReservaciones = JSON.stringify(datosTabReservaciones);
 
     //Petición Ajax
 
     $.ajax({
         url: "http://129.146.17.50:8080/api/Reservation/save",
-        data: dataToSendR,
+        data: dataToSendReservaciones,
         type: "POST",
         contentType: "application/JSON",
         success: function(respuesta) {

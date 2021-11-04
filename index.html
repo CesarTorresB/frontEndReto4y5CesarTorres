@@ -50,14 +50,15 @@
                     <h1 class="CategoriaTitulo">Categoria</h1>
                 </div>
 
-                <input type="text" id="nameCatg" placeholder="Nombre/Name" class="inputNameCatg" />
-                <input type="text" id="descriptionCatg" placeholder="Descripción/Description" class="inputDescriptionCatg" />
+                <input type="text" id="nameCategoria" placeholder="Nombre/Name" class="inputNameCatg" />
+                <input type="text" id="descriptionCategoria" placeholder="Descripción/Description" class="inputDescriptionCatg" />
 
-                <button onclick="registroCatg()" id="btnRegistrarCtg" class="btnRegistrarCategoria">Registrar</button>
-                <button onclick="consultaCatg()" id="btnConsultaCtg" class="btnConsultaCategoria">Consultar</button>
-                <button onclick="actualizar()" id="btnGuardarCtg" class="btnGuardarCategoria">GuardarEdicion</button>
+                <button onclick="registroCatg()" id="btnRegistrarCategoria" class="btnRegistrarCategoria">Registrar</button>
+                <button onclick="consultaCategoria()" id="btnConsultarCategoria" class="btnConsultaCategoria">Consultar</button>
+                <button onclick="actualizar()" id="btnGuardarCategoria" class="btnGuardarCategoria">GuardarEdicion</button>
+                <button onclick="borrarCategoria()" id="btnBorrarCategoria" class="btnBorrarCategoria">Borrar</button>
 
-                <div id="listadoCatg" style="float: center; padding: 12px; text-align: left"></div>
+                <div id="listadoCategoria" style="float: center; padding: 12px; text-align: left"></div>
             </div>
 
             <!--listado Cabañas -->
@@ -69,26 +70,28 @@
                 <input type="text" id="brand" placeholder="Marca/Brand" class="inputBrandCabania" />
                 <input type="number" id="rooms" placeholder="Habitaciones/Rooms" class="inputRoomsCabania" />
                 <input type="text" id="description" placeholder="Descripción/Description" class="inputDescriptionCabania" />
-                <select id="selectCategory" class="selectSelectCategory"></select>
+                <select id="selectCategoria" class="selectSelectCategory"></select>
 
-                <button onclick="registro()" id="btnRegistrar" class="btnRegistrarCabania">Registrar</button>
-                <button onclick="consulta()" id="btnConsulta" class="btnConsultaCabania">Consultar</button>
-                <button onclick="actualizar()" id="btnGuardar" class="btnActualizarCabania">GuardarEdicion</button>
-                <div id="listado" style="float: center; padding: 12px; text-align: left"></div>
+                <button onclick="registro()" id="btnRegistrarCabin" class="btnRegistrarCabania">Registrar</button>
+                <button onclick="consulta()" id="btnConsultarCabin" class="btnConsultaCabania">Consultar</button>
+                <button onclick="actualizar()" id="btnGuardarCabin" class="btnActualizarCabania">GuardarEdicion</button>
+                <button onclick="borrar()" id="btnBorrarCabin" class="btnBorrarCabania">Borrar</button>
+                <div id="listadoCabin" style="float: center; padding: 12px; text-align: left"></div>
             </div>
             <!--listado Clientes-->
             <div class="cardClientes">
                 <h1 class="CategoriaClientes">Clientes</h1>
-                <input type="text" id="emailCli" placeholder="Correo electrónico/e-mail" class="inputEmailClientes" />
-                <input type="text" id="passwordCli" placeholder="Contraseña/Password" class="inputPasswordClientes" />
-                <input type="text" id="nameCli" placeholder="Nombre/Name" class="inputNameClientes" />
-                <input type="number" id="ageCli" placeholder="Edad/Age" class="inputAgeClientes" />
+                <input type="text" id="emailClientes" placeholder="Correo electrónico/e-mail" class="inputEmailClientes" />
+                <input type="text" id="passwordClientes" placeholder="Contraseña/Password" class="inputPasswordClientes" />
+                <input type="text" id="nameClientes" placeholder="Nombre/Name" class="inputNameClientes" />
+                <input type="number" id="ageClientes" placeholder="Edad/Age" class="inputAgeClientes" />
 
-                <button onclick="registroCli ()" id="btnRegistrar1" class="btnRegistrarClientes">Registrar</button>
-                <button onclick="consultaCli()" id="btnConsulta1" class="btnConsultarClientes">Consultar</button>
-                <button onclick="actualizarCli()" id="btnGuardar1" class="btnGuardarClientes">GuardarEdicion</button>
+                <button onclick="registroClientes ()" id="btnRegistrarClientes" class="btnRegistrarClientes">Registrar</button>
+                <button onclick="consultaClientes()" id="btnConsultaRClientes" class="btnConsultarClientes">Consultar</button>
+                <button onclick="actualizarClientes()" id="btnGuardarClientes" class="btnGuardarClientes">GuardarEdicion</button>
+                <button onclick="actualizarClientes()" id="btnGuardarClientes" class="btnBorrarClientes">Borrar</button>
 
-                <div id="listadocli" style="float: center; padding: 12px; text-align: left"></div>
+                <div id="listadoClientes" style="float: center; padding: 12px; text-align: left"></div>
 
             </div>
 
@@ -107,11 +110,12 @@
                     <h2 class="subTitulo2SelectMensaje">Seleccionar Cliente</h2>
                     <select class="selectClient"></select>
 
-                    <button onclick="registroMess()" id="btnRegistrar2" class="btnRegistrarMensaje">Registrar</button>
-                    <button onclick="consultaMess()" id="btnConsulta2" class="btnConsultarMensaje">Consultar</button>
-                    <button onclick="actualizarMess()" id="btnGuardar2" class="btnGuardarMensaje">GuardarEdicion</button>
+                    <button onclick="registroMensajes()" id="btnRegistrarMensajes" class="btnRegistrarMensaje">Registrar</button>
+                    <button onclick="consultaMensajes()" id="btnConsultarMensajes" class="btnConsultarMensaje">Consultar</button>
+                    <button onclick="actualizarMensajes()" id="btnGuardarMensajes" class="btnGuardarMensaje">GuardarEdicion</button>
+                    <button onclick="borrarMensajes()" id="btnBorrarMensajes" class="btnBorrarMensaje">Borrar</button>
 
-                    <div id="listadoM" style="float: center; padding: 12px; text-align: left"></div>
+                    <div id="listadoMensajes" style="float: center; padding: 12px; text-align: left"></div>
 
                 </div>
 
@@ -127,50 +131,51 @@
                     <select class="selectClient"></select>
 
 
-                    <button onclick="registroRes()" id="btnRegistrarRese" class="btnRegistrarReservacion">Registrar</button>
-                    <button onclick="consultaRes()" id="btnConsultaRese" class="btnConsultarReservacion">Consultar</button>
-                    <button onclick="actualizarRes()" id="btnGuardarRese" class="btnGuardarReservacion">GuardarEdicion</button>
+                    <button onclick="registroReservaciones()" id="btnRegistrarReservaciones" class="btnRegistrarReservacion">Registrar</button>
+                    <button onclick="consultaReservaciones()" id="btnConsultaReservaciones" class="btnConsultarReservacion">Consultar</button>
+                    <button onclick="actualizarReservaciones()" id="btnGuardarReservaciones" class="btnGuardarReservaciones">GuardarEdicion</button>
+                    <button onclick="borrarReservaciones()" id="btnBorrarReservaciones" class="btnBorrarReservaciones">Borrar</button>
 
-                    <div id="listadoRes" style="float: center; padding: 12px; text-align: left"></div>
+                    <div id="listadoReservaciones" style="float: center; padding: 12px; text-align: left"></div>
 
                 </div>
             </div>
         </div>
+        <footer>
+
+            <div class="ContenedorFooter">
+                <div class="distribucionFooter">
+                    <div class="informacionFooter">
+                        <p>
+                            Rentadecabañas
+                        </p>
+                        <p>
+                            rentaCabanias@cabanias.com.co
+                        </p>
+                        <p>
+                            cel:(601)3409009
+                        </p>
+                        <p>
+                            Cll 779 a 78-66 Bogotá
+                        </p>
+                    </div>
+                    <div class="icocnos">
+                        <div class="iconoFaceBook"></div>
+                        <div class="iconoInstagram"></div>
+                        <div class="iconoTwitter"></div>
+                    </div>
+
+
+                    <div>
+                        <div class="iconoPayU"></div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+    </footer>
 </body>
-<footer>
-
-    <div class="ContenedorFooter">
-        <div class="distribucionFooter">
-            <div class="informacionFooter">
-                <p>
-                    Rentadecabañas
-                </p>
-                <p>
-                    rentaCabanias@cabanias.com.co
-                </p>
-                <p>
-                    cel:(601)3409009
-                </p>
-                <p>
-                    Cll 779 a 78-66 Bogotá
-                </p>
-            </div>
-            <div class="icocnos">
-                <div class="iconoFaceBook"></div>
-                <div class="iconoInstagram"></div>
-                <div class="iconoTwitter"></div>
-            </div>
-
-
-            <div>
-                <div class="iconoPayU"></div>
-            </div>
-
-        </div>
-    </div>
-    </div>
-
-</footer>
 
 </html>
 

@@ -1,36 +1,111 @@
 $(document).ready(function() {
-    $("#btnGuardar").show();
-    $("#btnGuardar1").show();
-    $("#btnGuardar2").show();
-})
-
-//--------------------- Editar Cabañas -----------------------
-function editarRegistro(numId) {
+        $("#btnGuardarCategoria").show();
+        $("#btnGuardarCabin").show();
+        $("#btnGuardarClientes").show();
+        $("#btnGuardarMensajes").show();
+    })
+    //--------------------- Editar Categoria -----------------------
+function editarRegistroCategoria(numIdCategoria) {
 
     // ocultar y mostrar botones
-    $("#btnGuardar").show();
-    $("#btnRegistrar").show();
-    $("#btnConsulta").show();
-    $("#numId").prop('disabled', true);
-    $("#nombre").focus();
+    $("#btnGuardarCategoria").show();
+    $("#btnRegistrarCategoria").show();
+    $("#btnConsultarCategoria").show();
+    $("#btnBorrarCategoria").show();
+    $("#numIdCategoria").prop('disabled', true);
+    $("#nombreCategoria").focus();
 
-    var datosTabCabin = {
-        id: numId
+    var datosTabCategoria = {
+        id: numIdCategoria
     }
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCabin);
+    let dataToSendCategoria = JSON.stringify(datosTabCategoria);
 
     //Peticion Ajax
     $.ajax({
-        url: "https://129.146.17.50:8080/Cabin/update" + numId,
+        url: "https://129.146.17.50:8080/Category/update" + numIdCategoria,
         type: 'GET',
         dataType: 'json',
 
         success: function(respuesta) {
             var items = respuesta.items;
 
-            $("#numId").val(items[0].id);
+            $("#numIdCategoria").val(items[0].id);
+            $("#description").val(items[0].description);
+            console.log(items);
+        },
+
+        error: function(xhr, status) {
+            console.log(status);
+        }
+    });
+}
+
+// Actualizar datos tabla Cabañas
+
+function actualizar() {
+
+    $("#btnGuardarCategoria").show();
+    $("#btnRegistrarCategoria").show();
+    $("#btnConsultarCategoria").show();
+    $("#btnBorrarCategoria").show();
+
+    var datosTabCategoria = {
+        id: $("#numIdCategoria").val(),
+        description: $("#description").val(items[0].description)
+    }
+
+    //Conversion a JSON
+    let dataToSendCategoria = JSON.stringify(datosTabCategoria);
+
+    //Petición Ajax
+    $.ajax({
+        url: "https://129.146.17.50:8080/Category/update",
+        data: dataToSendCategoria,
+        type: 'PUT',
+        contentType: "application/JSON",
+
+        success: function(respuesta) {
+            console.log("Actualizado");
+            consulta();
+        },
+
+        error: function(xhr, status) {
+            console.log(status);
+        }
+    })
+
+
+}
+//--------------------- Editar Cabañas -----------------------
+function editarRegistro(numIdCabin) {
+
+    // ocultar y mostrar botones
+    $("#btnGuardarCabin").show();
+    $("#btnRegistrarCabin").show();
+    $("#btnConsultarCabin").show();
+    ("#btnBorrarCabin").show();
+    $("#numIdCabin").prop('disabled', true);
+    $("#nombreCabin").focus();
+
+    var datosTabCabin = {
+        id: numIdCabin
+    }
+
+    //Conversion a JSON
+    let dataToSendCabin = JSON.stringify(datosTabCabin);
+
+    //Peticion Ajax
+    $.ajax({
+        url: "https://129.146.17.50:8080/Cabin/update" + numIdCabin,
+        type: 'GET',
+        dataType: 'json',
+
+        success: function(respuesta) {
+            var items = respuesta.items;
+
+            $("#numIdCabin").val(items[0].id);
             $("#brand").val(items[0].brand);
             $("#rooms").val(items[0].rooms);
             $("#idCateg").val(items[0].category_id);
@@ -48,12 +123,13 @@ function editarRegistro(numId) {
 
 function actualizar() {
 
-    $("#btnGuardar").show();
-    $("#btnRegistrar").show();
-    $("#btnConsulta").show();
+    $("#btnGuardarCabin").show();
+    $("#btnRegistrarCabin").show();
+    $("#btnConsultarCabin").show();
+    $("#btnBorrarCabin").show();
 
     var datosTabCabin = {
-        id: $("#numId").val(),
+        id: $("#numIdCabin").val(),
         brand: $("#brand").val(),
         rooms: $("#rooms").val(),
         category_id: $("#idCateg").val(),
@@ -61,12 +137,12 @@ function actualizar() {
     }
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCabin);
+    let dataToSendCabin = JSON.stringify(datosTabCabin);
 
     //Petición Ajax
     $.ajax({
         url: "https://129.146.17.50:8080/Cabin/update",
-        data: dataToSend,
+        data: dataToSendCabin,
         type: 'PUT',
         contentType: "application/JSON",
 
@@ -85,33 +161,34 @@ function actualizar() {
 //---------------------------- Editar Clientes---------------------------
 
 
-function editarRegistroCli(numIdc) {
+function editarRegistroClientes(numIdClientes) {
 
     // ocultar y mostrar botones
-    $("#btnGuardar1").show();
-    $("#btnRegistrar1").show();
-    $("#btnConsulta1").show();
-    $("#numIdc").prop('disabled', true);
-    $("#namec").focus();
+    $("#btnGuardarClientes").show();
+    $("#btnRegistrarClientes").show();
+    $("#btnConsultarClientes").show();
+    $("#btnBorrarClientes").show();
+    $("#numIdClientes").prop('disabled', true);
+    $("#nameClientes").focus();
 
     var datosTabCliente = {
-        id: numIdc
+        id: numIdClientes
     }
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCliente);
+    let dataToSendClientes = JSON.stringify(datosTabCliente);
 
     //Peticion Ajax
     $.ajax({
-        url: "https://129.146.17.50:8080/Client/update" + numIdc,
+        url: "https://129.146.17.50:8080/Client/update" + numIdClientes,
         type: 'GET',
         dataType: 'json',
 
         success: function(respuesta) {
             var items = respuesta.items;
 
-            $("#numIdc").val(items[0].id);
-            $("#namec").val(items[0].name);
+            $("#numIdClientes").val(items[0].id);
+            $("#nameClientes").val(items[0].name);
             $("#email").val(items[0].email);
             $("#age").val(items[0].age);
             console.log(items);
@@ -126,26 +203,27 @@ function editarRegistroCli(numIdc) {
 
 // Actualizar datos tabla cliente
 
-function actualizarCli() {
+function actualizarClientes() {
 
-    $("#btnGuardar1").show();
-    $("#btnRegistrar1").show();
-    $("#btnConsulta1").show();
+    $("#btnGuardarClientes").show();
+    $("#btnRegistrarClientes").show();
+    $("#btnConsultarClientes").show();
+    $("#btnBorrarClientes").show();
 
     var datosTabCliente = {
-        id: $("#numIdc").val(),
-        name: $("#namec").val(),
+        id: $("#numIdClientes").val(),
+        name: $("#nameClientes").val(),
         email: $("#email").val(),
         age: $("#age").val(),
     }
 
     //Conversion a JSON
-    let dataToSend = JSON.stringify(datosTabCliente);
+    let dataToSendClientes = JSON.stringify(datosTabCliente);
 
     //Petición Ajax
     $.ajax({
         url: "https://129.146.17.50:8080/Client/update",
-        data: dataToSend,
+        data: dataToSendClientes,
         type: 'PUT',
         contentType: "application/JSON",
 
@@ -166,32 +244,33 @@ function actualizarCli() {
 //--------------------------- Editar Messages------------------------
 
 
-function editarMess(numIdm) {
+function editarMensajes(numIdMensajes) {
 
     // ocultar y mostrar botones
-    $("#btnGuardar2").show();
-    $("#btnRegistrar2").show();
-    $("#btnConsulta2").show();
-    $("#numIdm").prop('disabled', true);
+    $("#btnGuardarMensajes").show();
+    $("#btnRegistrarMensaje").show();
+    $("#btnConsultarMensajes").show();
+    $("#btnBorrarMensajes").show();
+    $("#numIdMensajes").prop('disabled', true);
     $("#message").focus();
 
-    var datosTabMess = {
-        id: numIdm
+    var datosTabMensajes = {
+        id: numIdMensajes
     }
 
     //Conversion a JSON
-    let dataToSendM = JSON.stringify(datosTabMess);
+    let dataToSendMensajes = JSON.stringify(datosTabMensajes);
 
     //Peticion Ajax
     $.ajax({
-        url: "https://129.146.17.50:8080/Message/update" + numIdm,
+        url: "https://129.146.17.50:8080/Message/update" + numIdMensajes,
         type: 'GET',
         dataType: 'json',
 
         success: function(respuesta) {
             var items = respuesta.items;
 
-            $("#numIdm").val(items[0].id);
+            $("#numIdMensajes").val(items[0].id);
             $("#message").val(items[0].messagetext);
             console.log(items);
 
@@ -205,25 +284,26 @@ function editarMess(numIdm) {
 
 // Actualizar datos tabla cliente
 
-function actualizarMess() {
+function actualizarMensajes() {
 
-    $("#btnGuardar2").show();
-    $("#btnRegistrar2").show();
-    $("#btnConsulta2").show();
+    $("#btnGuardarMensajes").show();
+    $("#btnRegistrarMensajes").show();
+    $("#btnConsultarMensajes").show();
+    $("#btnBorrarMensajes").show();
 
     var datosTabMess = {
-        id: $("#numIdm").val(),
+        id: $("#numIdMensajes").val(),
         messagetext: $("#message").val(),
 
     }
 
     //Conversion a JSON
-    let dataToSendM = JSON.stringify(datosTabMess);
+    let dataToSendMensajes = JSON.stringify(datosTabMensajes);
 
     //Petición Ajax
     $.ajax({
         url: "https://129.146.17.50:8080/Message/update",
-        data: dataToSendM,
+        data: dataToSendMensajes,
         type: 'PUT',
         contentType: "application/JSON",
 
